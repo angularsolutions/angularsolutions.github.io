@@ -5,30 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <script src="css/5grid/init.js?use=mobile,desktop,1000px"></script>
+  <script src="js/init.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
+/**
+Color inversion
+**/
+
 body, html {
+  color: #e8e6e3;
   height: 100%;
   line-height: 1.8;
+  background: #181A1C;
 }
 
 /* Full height image header */
 .bgimg-1 {
-  background: #32bf13;
-background: -moz-linear-gradient(left, #32bf13 0%, #b7df2d 42%, #b7df2d 42%, #dff776 73%, #e2f785 87%, #d6f473 100%);
-background: -webkit-linear-gradient(left, #32bf13 0%,#b7df2d 42%,#b7df2d 42%,#dff776 73%,#e2f785 87%,#d6f473 100%);
-background: linear-gradient(to right, #32bf13 0%,#b7df2d 42%,#b7df2d 42%,#dff776 73%,#e2f785 87%,#d6f473 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32bf13', endColorstr='#d6f473',GradientType=1 );
-  min-height: 100%;
+  background: -moz-linear-gradient(0deg, #008000 0%, #518A1D 42%, #669416 62%, #396120 100%); /* ff3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%, #008000), color-stop(42%, #518A1D), color-stop(62%, #669416), color-stop(100%, #396120)); /* safari4+,chrome */
+background: -webkit-linear-gradient(0deg, #008000 0%, #518A1D 42%, #669416 62%, #396120 100%); /* safari5.1+,chrome10+ */
+background: -o-linear-gradient(0deg, #008000 0%, #518A1D 42%, #669416 62%, #396120 100%); /* opera 11.10+ */
+background: -ms-linear-gradient(0deg, #008000 0%, #518A1D 42%, #669416 62%, #396120 100%); /* ie10+ */
+background: linear-gradient(90deg, #008000 0%, #518A1D 42%, #669416 62%, #396120 100%); /* w3c */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008000', endColorstr='#396120',GradientType=1 ); /* ie6-9 */min-height: 100%;
 }
+.w3-white{
+  transition: background-color 0.3s ease;
 
+}
 .w3-bar .w3-button {
   padding: 16px;
   color: white;
+  transition: background-color 0.6s ease;
+}
+.w3-container {
+  background: #181A1C;
+  color: #e8e6e3;
+}
+.w3-light-green, .w3-hover-light-green:hover {
+    color: rgb(232, 230, 227) !important;
+    background-color: rgb(83, 120, 40) !important;
 }
 </style>
+
 <body>
 
 <!-- Navbar (sit on top) -->
@@ -41,7 +64,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32bf13', end
       <a href="#services" class="w3-bar-item w3-button"> SERVICES</a>
       <a href="#portfolio" class="w3-bar-item w3-button"> PORTFOLIO</a>
       <a href="#team" class="w3-bar-item w3-button"> TEAM</a>
-      <a href="#blog" class="w3-bar-item w3-button"> BLOG</a>
+      <a href="blog.html" class="w3-bar-item w3-button"> BLOG</a>
       <a href="#contact" class="w3-bar-item w3-button"> CONTACT</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -59,7 +82,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32bf13', end
   <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button">SERVICES</a>
   <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button">PORTFOLIO</a>
   <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
-  <a href="#blog" onclick="w3_close()" class="w3-bar-item w3-button">BLOG</a>
+  <a href="blog.html" onclick="w3_close()" class="w3-bar-item w3-button">BLOG</a>
   <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
 </nav>
 
@@ -102,11 +125,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32bf13', end
 </div>
 
 <!-- Promo Section - "We know design" -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px">
+<div class="w3-container" style="padding:128px 16px">
   <div class="w3-row-padding">
     <div class="w3-col m6">
       <h3>We know design.</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore.</p>
+      <p>Like for real, if you're looking for someone who truly understands design, this is the right place.</p>
       <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View Our Works</a></p>
     </div>
     <div class="w3-col m6">
@@ -143,7 +166,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32bf13', end
 <!-- SERVICES Section -->
   
   
-<div class="w3-container w3-light-grey w3-padding-64" id="services">
+<div class="w3-container w3-padding-64" id="services">
   <div class="w3-row-padding">
     <div class="w3-col m6">
       <h3>Our Services.</h3>
@@ -232,7 +255,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32bf13', end
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="/assets/team1.jpg" alt="Plug" style="width:100%">
+        <img src="./assets/team1.jpg" alt="Plug" style="width:100%">
         <div class="w3-container">
           <h3>Jesus</h3>
           <p class="w3-opacity">Supreme Emperor</p>
@@ -243,7 +266,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32bf13', end
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-card">
-        <img src="/assets/team2.jpg" alt="El Pene" style="width:100%">
+        <img src="./assets/team2.jpg" alt="El Pene" style="width:100%">
         <div class="w3-container">
           <h3>Tormund Greyjoy</h3>
           <p class="w3-opacity">Protector of Mankind</p>
@@ -261,7 +284,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32bf13', end
 
 
 <!-- Contact Section -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
+<div class="w3-container " style="padding:128px 16px" id="contact">
   <h3 class="w3-center">CONTACT</h3>
   <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
   <div style="margin-top:48px">
