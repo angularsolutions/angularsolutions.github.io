@@ -11,7 +11,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139990812-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-139990812-1');
+</script>
 
 
 <!-- SMOOTH SCROLL -->
@@ -48,6 +56,11 @@ $(document).ready(function(){
 
 
 <style>
+
+
+
+
+
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
 /**
@@ -77,6 +90,19 @@ min-height: 100%;
   transition: background-color 0.3s ease;
 
 }
+.lmore{
+  background: none !important;
+  border-width: thick !important;
+  border-color: white !important;
+  border-style: solid !important;
+}
+
+.lmore:hover{
+  background-color: white !important;
+  color: purple !important;
+  transition: background-color 0.6s ease;
+}
+
 .w3-bar .w3-button {
   padding: 16px;
   color: white;
@@ -135,7 +161,7 @@ min-height: 100%;
   <div class="w3-display-left w3-text-white" style="padding:48px">
     <span class="w3-jumbo w3-hide-small">We build your website</span><br>
     <span class="w3-large">Solve your software problems today</span>
-    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more</a></p>
+    <p><a href="#about" class="w3-button lmore w3-padding-large w3-large w3-margin-top ">Learn more</a></p>
   </div> 
   
 </header>
