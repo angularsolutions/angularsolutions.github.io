@@ -48,6 +48,14 @@ $(document).ready(function(){
     } // End if
   });
 });
+
+$(function () {
+  $(document).scroll(function () {
+    var $nav = $(".navbar-fixed-top");
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+  });
+});
+
 </script>
 <!-- SMOOTH SCROLL -->
 
@@ -62,6 +70,17 @@ $(document).ready(function(){
     width: 70% !important;
   }
 }
+
+/**
+NAVBAR AFTER SCROLL
+**/
+.navbar-fixed-top.scrolled {
+  background-color: #181A1C !important;
+  transition: background-color 500ms linear;
+}
+
+
+
 .w3-input{
   margin: auto !important;
   border-radius: 7px !important;
@@ -124,13 +143,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9514FF', end
 }
 
 
+.myNavbar{
+
+}
+
+
 </style>
 
 <body>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
+  <div class="w3-bar navbar-fixed-top" id="myNavbar">
     <a href="#home" class="w3-bar-item w3-button w3-wide">&lt;/ANGULAR SOLUTIONS&gt</a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
