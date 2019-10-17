@@ -1,0 +1,78 @@
+.slider-container{
+  width: 620px;
+  height: 400px;
+  top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative; /* since slides are absolute */
+  overflow: hidden;
+  animation: 1s 1s both fadeIn;
+}
+
+.slide{
+  /* positioning all slides normal position to full size of slider and in view */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  animation: 10s linear infinite sliderAnimation;
+
+  /*
+  animation-name: sliderAnimation;
+  animation-duration: 12s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  */
+
+  border: 8px solid #226B6F; /* thought it looked good */
+  box-sizing: border-box; /* to keep total width at 100% */
+
+  display: flex;  /* to position the text inside*/
+}
+
+.slide:first-of-type{
+  /* City */
+  background: no-repeat 50% 20%/cover url(../img/spresponse.png);
+  /* positioning for the text inside */
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.slide:nth-of-type(2){
+  /* Nature Bridge */
+  background: no-repeat center/cover url(../img/vip.png);
+
+  /* 12s - 9s = 3s... Will start after 3s */
+  animation-delay: -6s;
+}
+
+
+.slide:last-of-type{
+  /* Coffee */
+  background: no-repeat bottom/cover url(../img/comoxempire.png);
+  /* Will start after 9s */
+  animation-delay: -3s;
+
+  /* positioning for the text inside */
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes sliderAnimation{
+  /* 4 slides, 20% in place and 5% transition time = 100% */
+  0%{transform: translateX(0); opacity: 1;} /* starts in view */
+  30%{transform: translateX(0); opacity: 1;} /* stays in view */
+  45%{transform: translateX(-100%); opacity: 1;} /* slides out left */
+  66%{transform: translateX(-100%); opacity: 0;} /* Doesn't matter at what percent: changes to transparent so can't see it travel back across to the right. */
+  70%{transform: translateX(100%); opacity: 0;} /* Doesn't matter at what percent: moves off right */
+  90%{transform: translateX(100%); opacity: 1;} /* Becomes transparent and Ready to slide on from the right */
+}
+
+
+body{
+  max-width: 100%;
+}
+
+@keyframes fadeIn{
+  from{opacity: 0;}
+}
