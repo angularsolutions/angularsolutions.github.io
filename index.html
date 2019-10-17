@@ -1,527 +1,282 @@
-<!DOCTYPE html>
-<html>
-<title>Angular Solutions</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-  integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<!doctype html>
+<html class="no-js" lang="">
 
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="Angular Solutions Website TODO">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<script src="js/jquery-1.8.3.min.js"></script>
-<script src="css/5grid/init.js?use=mobile,desktop,1000px"></script>
-<script src="js/init.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
 
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/slider.css">
 
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139990812-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', 'UA-139990812-1');
-</script>
-
-
-<!-- SMOOTH SCROLL -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-  $(document).ready(function () {
-    // Add smooth scrolling to all links
-    $("a").on('click', function (event) {
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
-        // Store hash
-        var hash = this.hash;
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 1200, function () {
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
-        });
-      } // End if
-    });
-  });
-
-  $(function () {
-    $(document).scroll(function () {
-      var $nav = $(".navbar-fixed-top");
-      $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-    });
-  });
-
-</script>
-<!-- SMOOTH SCROLL -->
-
-
-
-
-<style>
-  @media screen and (min-width: 800px) {
-    .binput {
-      margin-top: 48px !important;
-      margin: auto !important;
-      width: 70% !important;
-    }
-  }
-
-  /**
-NAVBAR AFTER SCROLL
-**/
-  .navbar-fixed-top.scrolled {
-    background-color: #181A1C !important;
-    transition: background-color 500ms linear;
-  }
-
-
-
-  .w3-input {
-    margin: auto !important;
-    border-radius: 7px !important;
-    background-color: #121212;
-    color: white;
-  }
-
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Raleway", sans-serif
-  }
-
-  /**
-Color inversion
-**/
-  body,
-  html {
-    color: #e8e6e3;
-    height: 100%;
-    line-height: 1.8;
-    background: #181A1C;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
-  }
-
-  /* Full height image header */
-  .bgimg-1,
-  .w3-light-green {
-    background: -moz-linear-gradient(352deg, #9514FF 0%, #C33ECF 23%, #2B2F9E 60%, #8400FF 77%, #3D9BFF 100%);
-    /* ff3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #9514FF), color-stop(23%, #C33ECF), color-stop(60%, #2B2F9E), color-stop(77%, #8400FF), color-stop(100%, #3D9BFF));
-    /* safari4+,chrome */
-    background: -webkit-linear-gradient(352deg, #9514FF 0%, #C33ECF 23%, #2B2F9E 60%, #8400FF 77%, #3D9BFF 100%);
-    /* safari5.1+,chrome10+ */
-    background: -o-linear-gradient(352deg, #9514FF 0%, #C33ECF 23%, #2B2F9E 60%, #8400FF 77%, #3D9BFF 100%);
-    /* opera 11.10+ */
-    background: -ms-linear-gradient(352deg, #9514FF 0%, #C33ECF 23%, #2B2F9E 60%, #8400FF 77%, #3D9BFF 100%);
-    /* ie10+ */
-    background: linear-gradient(98deg, #9514FF 0%, #C33ECF 23%, #2B2F9E 60%, #8400FF 77%, #3D9BFF 100%);
-    /* w3c */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9514FF', endColorstr='#3D9BFF', GradientType=1);
-    /* ie6-9 */
-  }
-
-  .bgimg-1 {
-    min-height: 100%;
-  }
-
-  .w3-white {
-    transition: background-color 0.35s ease;
-  }
-
-  .lmore {
-    background: none !important;
-    border-width: thick !important;
-    border-color: white !important;
-    border-style: solid !important;
-  }
-
-  .lmore:hover {
-    background-color: white !important;
-    color: purple !important;
-    transition: background-color 0.6s ease;
-  }
-
-  .w3-bar .w3-button {
-    padding: 16px;
-    color: white;
-    transition: background-color 0.6s ease;
-  }
-
-  .w3-container {
-    background: #17171d;
-    color: #e8e6e3;
-  }
-
-  .w3-light-green,
-  .w3-hover-light-green:hover {
-    color: rgb(232, 230, 227) !important;
-    background-color: #7434B3 !important;
-  }
-
-  .other {
-    background-color: #121212 !important;
-  }
-
-
-  .project {
-    width: 80%;
-    height: 200px;
-    object-fit: cover;
-    object-position: 0 0;
-    left: 10%;
-    position: relative;
-    transition: transform 0.32s ease;
-
-  }
-  .project:hover{
-    -webkit-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-          transform: scale(1.2);
-    transition: transform 0.32s ease;
-  }
-
-  .w3-bar-item:hover{
-    height: 80%;
-    background: none !important;
-    color: #fff !important;
-    transition: color 0.20s ease;
-  }
-  .w3-bar-item{
-    background: none !important;
-    border-style: none;
-    border-width: 0;
-    color: rgb(232, 230, 227) !important;
-    transition: color 0.20s ease;
-  }
-  .circle{
-    object-fit: cover;
-    object-position: 0 0;
-    position: relative;
-  }
-</style>
-
+  <meta name="theme-color" content="#24312E">
+</head>
 <body>
+  <!-- Add your site or application content here -->
+  
+ <div class="page" id="home">
+   <img class="bg-image" src="img/main.png" alt="angular-background">
+  <div class="navholder">
+    <div class="navbar">
+        <li class="navButton">
+            <div class="btn-square">
+              <a href="#home">HOME</a>
+            </div>
+            <div class="arrow-down"></div>
+        </li>
+        <li class="navButton">
+            <div class="btn-square">
+              <a href="#services">SERVICES</a>
+            </div>
+            <div class="arrow-down"></div>
+        </li>
+        <li class="navButton">
+            <div class="btn-square">
+                <a href="#work">WORK</a>
+            </div>
+            <div class="arrow-down"></div>
+        </li>
+        <li class="navButton">
+            <div class="btn-square">
+                <a href="#team">TEAM</a>
+            </div>
+            <div class="arrow-down"></div>
+        </li>
+        <li class="navButton">
+            <div class="btn-square">
+                <a href="#contact">CONTACT</a>
+              </div>
+            <div class="arrow-down"></div>
+        </li>
+    </div>
+  </div>
 
-  <!-- Navbar (sit on top) -->
-  <div class="w3-top">
-    <div class="w3-bar navbar-fixed-top" id="myNavbar">
-      <a href="#home" class="w3-bar-item w3-button w3-wide">&lt;/ANGULAR SOLUTIONS&gt</a>
-      <!-- Right-sided navbar links -->
-      <div class="w3-right w3-hide-small">
-        <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-        <a href="#services" class="w3-bar-item w3-button"> SERVICES</a>
-        <a href="#portfolio" class="w3-bar-item w3-button"> PORTFOLIO</a>
-        <a href="#team" class="w3-bar-item w3-button"> TEAM</a>
-        <a href="blog.html" class="w3-bar-item w3-button"> BLOG</a>
-        <a href="#contact" class="w3-bar-item w3-button"> CONTACT</a>
+  <div class="logo">
+    <div class="logo-text">&lt;/ANGULAR SOLUTIONS&gt;</div>
+
+    <div class="consbutton">
+      
+        <a href="#contact" class="button ribbon-outset border">GET A FREE CONSULTATION</a>
+    </div>
+  </div>
+
+ </div> 
+<!--  SERVICES PAGE   -->
+ <div class="page" id="services">
+  
+  <div class="slantedDivA">
+      
+  </div>
+  <div class="flagholder">
+      <svg width="327px" height="77px" viewBox="0 0 327 77" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <polygon id="path-1" points="288.962277 0 333 38.5 288.962277 77 1.60590291e-13 77 0 38.5 2.24133212e-13 0"></polygon>
+            <filter x="-0.6%" y="-2.6%" width="101.2%" height="105.2%" filterUnits="objectBoundingBox" id="filter-2">
+                <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+                <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+                <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+                <feColorMatrix values="0 0 0 0 0.0131696456   0 0 0 0 0.0653872283   0 0 0 0 0.0371188702  0 0 0 0.710391171 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+            </filter>
+        </defs>
+        <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Desktop" transform="translate(0.000000, -848.000000)">
+                <g id="SERVICES-&gt;" transform="translate(-6.000000, 848.000000)">
+                    <g id="Polygon">
+                        <use fill-opacity="0.680015297" fill="#04BE8B" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <path stroke="#87FFCB" stroke-width="3" d="M288.399037,1.5 L1.5,1.5 L1.5,75.5 L288.399037,75.5 L330.721005,38.5 L288.399037,1.5 Z" stroke-linejoin="square"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+      </svg>
+      <p class="flagtext">SERVICES</p>
+  </div>
+
+
+ </div>
+ <!--  WORK PAGE   -->
+ <div class="page" id="work">
+    <div class="slantedDivB"></div>
+    <div class="slantedDivC"></div>
+    <div class="flagholder">
+        <svg width="327px" height="77px" viewBox="0 0 327 77" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs>
+              <polygon id="path-1" points="288.962277 0 333 38.5 288.962277 77 1.60590291e-13 77 0 38.5 2.24133212e-13 0"></polygon>
+              <filter x="-0.6%" y="-2.6%" width="101.2%" height="105.2%" filterUnits="objectBoundingBox" id="filter-2">
+                  <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+                  <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+                  <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+                  <feColorMatrix values="0 0 0 0 0.0131696456   0 0 0 0 0.0653872283   0 0 0 0 0.0371188702  0 0 0 0.710391171 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+              </filter>
+          </defs>
+          <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Desktop" transform="translate(0.000000, -848.000000)">
+                  <g id="SERVICES-&gt;" transform="translate(-6.000000, 848.000000)">
+                      <g id="Polygon">
+                          <use fill-opacity="0.680015297" fill="#04BE8B" fill-rule="evenodd" xlink:href="#path-1"></use>
+                          <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                          <path stroke="#87FFCB" stroke-width="3" d="M288.399037,1.5 L1.5,1.5 L1.5,75.5 L288.399037,75.5 L330.721005,38.5 L288.399037,1.5 Z" stroke-linejoin="square"></path>
+                      </g>
+                  </g>
+              </g>
+          </g>
+        </svg>
+        <p class="flagtext">WORK</p>
+    </div>
+    
+ </div>
+ <!--  TEAM PAGE   -->
+ <div class="page" id="team" style="background-color: #226B6F">
+    <div class="slantedDivD">
+        
+    </div>
+    <div class="flagholder">
+        <svg width="327px" height="77px" viewBox="0 0 327 77" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs>
+              <polygon id="path-1" points="288.962277 0 333 38.5 288.962277 77 1.60590291e-13 77 0 38.5 2.24133212e-13 0"></polygon>
+              <filter x="-0.6%" y="-2.6%" width="101.2%" height="105.2%" filterUnits="objectBoundingBox" id="filter-2">
+                  <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+                  <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+                  <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+                  <feColorMatrix values="0 0 0 0 0.0131696456   0 0 0 0 0.0653872283   0 0 0 0 0.0371188702  0 0 0 0.710391171 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+              </filter>
+          </defs>
+          <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Desktop" transform="translate(0.000000, -848.000000)">
+                  <g id="SERVICES-&gt;" transform="translate(-6.000000, 848.000000)">
+                      <g id="Polygon">
+                          <use fill-opacity="0.680015297" fill="#04BE8B" fill-rule="evenodd" xlink:href="#path-1"></use>
+                          <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                          <path stroke="#87FFCB" stroke-width="3" d="M288.399037,1.5 L1.5,1.5 L1.5,75.5 L288.399037,75.5 L330.721005,38.5 L288.399037,1.5 Z" stroke-linejoin="square"></path>
+                      </g>
+                  </g>
+              </g>
+          </g>
+        </svg>
+        <p class="flagtext">TEAM</p>
+    </div>
+ </div>
+ <!--  CONTACT PAGE   -->
+ <div class="page" id="contact" style="background-color: #0DA382">
+    <div class="slantedDivE">
+      
       </div>
-      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
-      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
-        onclick="w3_open()">
-        <i class="fa fa-bars"></i>
-      </a>
+    <div class="flagholder">
+        <svg width="327px" height="77px" viewBox="0 0 327 77" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs>
+              <polygon id="path-1" points="288.962277 0 333 38.5 288.962277 77 1.60590291e-13 77 0 38.5 2.24133212e-13 0"></polygon>
+              <filter x="-0.6%" y="-2.6%" width="101.2%" height="105.2%" filterUnits="objectBoundingBox" id="filter-2">
+                  <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+                  <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+                  <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+                  <feColorMatrix values="0 0 0 0 0.0131696456   0 0 0 0 0.0653872283   0 0 0 0 0.0371188702  0 0 0 0.710391171 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+              </filter>
+          </defs>
+          <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Desktop" transform="translate(0.000000, -848.000000)">
+                  <g id="SERVICES-&gt;" transform="translate(-6.000000, 848.000000)">
+                      <g id="Polygon">
+                          <use fill-opacity="0.680015297" fill="#04BE8B" fill-rule="evenodd" xlink:href="#path-1"></use>
+                          <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                          <path stroke="#87FFCB" stroke-width="3" d="M288.399037,1.5 L1.5,1.5 L1.5,75.5 L288.399037,75.5 L330.721005,38.5 L288.399037,1.5 Z" stroke-linejoin="square"></path>
+                      </g>
+                  </g>
+              </g>
+          </g>
+        </svg>
+        <p class="flagtext">CONTACT</p>
     </div>
+    
+ </div>
+
+ <!-- CONTENT PAGES -->
+
+  <div class="page1" id="">
+       
+      
+      <div class="p1wrapper" id="">
+            <div class="tile">
+                <h5>WEB/GRAPHIC DESIGN</h5>
+                <p class="aboutCaption">Responsive, Clean, and Friendly. We believe in highly functional websites which are simple to use. </p>
+            </div>
+            <div class="tile ">
+                <h5>BRANDING</h5>
+                <p class="aboutCaption">Synthesizing your ideas into a final entity that accurately represents your brand. </p>
+            </div>
+            
+            <div class="tile">
+                    <h5>OPTIMIZATION</h5>
+                    <p class="aboutCaption">Analytics that will improve the traffic functionality and search of your website. </p>
+            </div>
+            <div class="tile">
+                    <h5>SUPPORT</h5>
+                    <p class="aboutCaption">Regular support and maintenance to ensure your online presence is getting the attention it needs </p>
+            </div>
+          
+          
+        </div>
+
+       
   </div>
-
-  <!-- Sidebar on small screens when clicking the menu icon -->
-  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large"
-    style="display:none" id="mySidebar">
-    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button">SERVICES</a>
-    <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button">PORTFOLIO</a>
-    <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
-    <a href="blog.html" onclick="w3_close()" class="w3-bar-item w3-button">BLOG</a>
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
-  </nav>
-
-  <!-- Header with full-height image -->
-  <header class="bgimg-1 w3-display-container" id="home">
-    <div class="w3-display-left w3-text-white" style="padding:48px">
-      <span class="w3-jumbo w3-hide-small">We build your website</span><br>
-      <span class="w3-large">Solve your software problems today</span>
-      <p><a href="#about" class="w3-button lmore w3-padding-large w3-large w3-margin-top ">Learn more</a></p>
-    </div>
-
-  </header>
-
-  <!-- About Section -->
-  <div class="w3-container" style="padding:5% 5% ; min-height: 80% !important;" id="about">
-    <h3 class="w3-center">ABOUT THE COMPANY</h3>
-
-    <div class="w3-row-padding w3-center" style="margin-top:64px">
-
-      <p> Angular Solutions is a Vancouver based digital media solutions company which focuses on web design, app development, marketing, and branding. We provide clients with a full range of solutions that enables them to develop and
-        market their businesses online. Our team is dedicated to solving business problems which will save you time, money, and energy, so that you can focus on the bigger picture of your business. We began by helping friends and family
-        solve problems which obstructed the growth and development of their business, but we grew quickly when we realized how much we enjoyed helping people with their business goals. At Angular Solutions, we prioritize our clients needs 
-        before our own because we believe our success is a reflection of our clients success.
-      </p>
-    </div>
-
-    <div class="w3-quarter w3-center" style="margin-top:70px">
-
-      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
-      <p class="w3-large">Web Design</p>
-      <p>Responsive, Clean, and Friendly. We believe in highly functional websites which are simple to use. </p>
-    </div>
-    <div class="w3-quarter w3-center" style="margin-top:70px">
-      <i class="fas fa-id-card w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Graphic Design & Branding</p>
-      <p>Synthesizing your ideas into a final entity that accurately represents your brand.</p>
-    </div>
-    <div class="w3-quarter w3-center" style="margin-top:70px">
-      <i class="fas fa-chart-line w3-margin-bottom w3-jumbo"></i>
-
-      <p class="w3-large">Optimization</p>
-      <p>Analytics that will improve the traffic functionality and search of your website.</p>
-    </div>
-    <div class="w3-quarter w3-center" style="margin-top:70px">
-      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Support</p>
-      <p>Regular support and maintenance to ensure your online presence is getting the attention it needs.</p>
-      <br>
-    </div>
-
+  <div class="page2">
+        <div class='slider-container' id="sliderContainer">
+                <div class='slide'></div>
+                <div class='slide'></div>
+                <div class='slide'></div>
+        </div>
+              
   </div>
-
-  <!-- Promo Section - "We know design" -->
-  <!-- <div class="w3-container other" style="padding:128px 16px">
-  <div class="w3-row-padding">
-    <div class="w3-col m6">
-      <h3>We know design.</h3>
-      <p>Like for real, if you're looking for someone who truly understands design, this is the right place.</p>
-      <p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> View Our Works</a></p>
-    </div>
-    <div class="w3-col m6">
-      <img class="w3-image w3-round-large" src="/w3images/phone_buildings.jpg" alt="Buildings" width="700" height="394">
-    </div>
+  <div class="page3">
+        <div class="p3wrapper">
+                <div class=" a"><img src="img/team1.png" alt="team1" class="pic">
+                    <p>Keyann Al-Kheder</p>
+                </div>
+                <div class=" c"><img src="img/team2.png" alt="team2" class="pic">
+                    <p>Sam Parhimchik</p>
+                </div>
+                <div class=" e"><img src="img/team3.png" alt="team3" class="pic">
+                    <p>Ben Ansari</p>
+                </div>
+          </div>
   </div>
-</div>
- -->
-
-  <!-- Promo Section "Statistics" -->
-  <div class="w3-container w3-row w3-center w3-light-green w3-padding-64">
-    <div class="w3-quarter">
-      <span class="w3-xxlarge">10+</span>
-      <br>Partners
-    </div>
-    <div class="w3-quarter">
-      <span class="w3-xxlarge">10+</span>
-      <br>Projects Done
-    </div>
-    <div class="w3-quarter">
-      <span class="w3-xxlarge">10+</span>
-      <br>Happy Clients
-    </div>
-    <div class="w3-quarter">
-      <span class="w3-xxlarge">100+</span>
-      <br>Meetings
-    </div>
-  </div>
-
-
-
-
-
-  <!-- SERVICES Section -->
-  <div class="w3-container w3-padding-64" id="services" style=" height:100%;">
-    <div class="w3-row-padding">
-      <h1>Our Services</h1>
-      <div class="w3-col m6">
-        <p>We provide a full range of services in order to build, develop</p>
-        <p>and sustain your business' digital presence.</p>
-        <p></p>
-      </div>
-
-      <div class="w3-col m6">
-        <h4 class=""></i>Website Design</h4>
-        <div class="w3-grey">  
+  <div class="page4">
+    <div class="p3wrapper" id="">
+    
+        <p> Angular Solutions is a Vancouver based digital media solutions company which focuses on web design, app development, marketing, and branding. We provide clients with a full range of solutions that enables them to develop and
+          market their businesses online. Our team is dedicated to solving business problems which will save you time and money, so you can focus on the bigger picture of your business. At Angular Solutions, our clients' success is a reflection of our success.
+        </p>
+        <div class="email">
+            <h4 style="padding: 5px;">Book a free consultation for your business!</h4>
+            <div style="display: inline-flex">
+                
+            <a href="mailto:info@angularsolutions.io" id="emailIcon"> <img src="img/email.png" alt="send email" class="contactIcon"></a>
+            &nbsp; &nbsp; &nbsp;
+            <a href="tel:+17788914149"><img src="img/phone.png" alt="call phone" class="contactIcon"></a>
+            </div>
         </div>
         
-        <h4 class=""></i>Website Development</h4>
-        <div class="w3-grey">  
-        </div>  
-      
-        <h4 class=""></i>User Experience Design</h4>
-        <div class="w3-grey">
-        </div>
-  
-        <h4 class=""></i>Graphic Design</h4>
-        <div class="w3-grey">      
-        </div>
-      
-        <h4 class=""></i>Branding & Logo Design</h4>
-        <div class="w3-grey">
-        </div>
-
-        <h4 class=""></i>Hosting</h4>
-        <div class="w3-grey">
-        </div>
-
-        <h4 class=""></i>SEO</h4>
-        <div class="w3-grey">
-        </div>
-
-        <h4 class=""></i>Marketing & Advertisment</h4>
-        <div class="w3-grey">
-        </div>
-
-
       </div>
-    </div>
   </div>
 
+  <!-- CONTENT PAGES -->
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
 
-
-  <!-- Portfolio Section -->
-  <div class="w3-container w3-light-green" style="padding:128px 16px; min-height:100%;" id="portfolio">
-    <h3 class="w3-center">PORTFOLIO</h3>
-    <p class="w3-center w3-large">What we've done for people</p>
-
-    <div class="w3-row-padding" style="margin-top:64px">
-      <div class="w3-col l4 ">
-
-        <img src="./assets/vipscreenshot.jpg" onclick="onClick(this)" class=" project" alt="VIP Home Services">
-
-      </div>
-      <div class="w3-col l4 ">
-        <img src="./assets/comoxempire.jpg"  onclick="onClick(this)" class=" project" alt="Comox Empire">
-      </div>
-
-      <div class="w3-col l4 ">
-          <img src="./assets/qrespscreenshot.jpg"  onclick="onClick(this)" class=" project" alt="Quick Response">
-        </div>
-    </div>
-
-    <div class="w3-row-padding w3-section">
-
-    </div>
-  </div>
-
-
-  <!-- Modal for full size images on click-->
-  <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-    <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-      <img id="img01" class="w3-image">
-      <p id="caption" class="w3-opacity w3-large"></p>
-    </div>
-  </div>
-
-
-
-  <!-- Team Section -->
-  <div class="w3-container " style="padding:4% 5% ; min-height: 80% !important;" id="team">
-    <h3 class="w3-center">THE TEAM</h3>
-    <p class="w3-center w3-large">The ones who run this company</p>
-    <div class="w3-row-padding" style="margin-top:2%">
-      
-     
-      <div class="w3-col l4 m6 w3-margin-bottom">
-        <div class="w3-card">
-          <img src="./assets/team1.jpg" alt="Plug" style="width:100%; height:50%"class="circle">
-          <div class="w3-container">
-            <h3>Keyann Al-Kheder</h3>
-            <p class="w3-opacity">Supreme Emperor</p>
-            <p>Never too late to start</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="w3-col l4 m6 w3-margin-bottom">
-        <div class="w3-card">
-          <img src="./assets/team2.jpg" alt="El Pene" style="width:100%; height:70%" class="circle">
-          <div class="w3-container">
-            <h3>Sam Parhimchik</h3>
-            <p class="w3-opacity">Protector of Mankind</p>
-            <p>Let's make something awesome</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="w3-col l4 m6 w3-margin-bottom">
-        <div class="w3-card">
-          <img src="./assets/team3.jpg" alt="ben" style="width:100%; height:50%" class="circle">
-          <div class="w3-container">
-            <h3>Ben Ansari</h3>
-            <p class="w3-opacity">Guardian of the galaxy</p>
-            <p>It's hard to be upset when you're holding a cupcake</p>
-          </div>
-        </div>
-      </div>
-      
-      
-    </div>
-  </div>
-
-
-
-  <!-- Contact Section -->
-  <div class="w3-container other" style="padding:128px 16px" id="contact">
-    <h3 class="w3-center">CONTACT</h3>
-    <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
-    <div class="binput">
-      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Vancouver, BC</p>
-      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: Angularsolutionsltd@gmail.com</p>
-      <br>
-      <form action="/action_page.php" target="_blank">
-        <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
-        <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
-        <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
-        <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
-        <p>
-          <button class="w3-button w3-black" type="submit">
-            <i class="fa fa-paper-plane"></i> SEND MESSAGE
-          </button>
-        </p>
-      </form>
-    </div>
-  </div>
-
-
-  <!-- Footer -->
-  <footer class="w3-center w3-light-green w3-padding-64">
-    <div class="w3-xlarge w3-section">
-      <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <i class="fa fa-instagram w3-hover-opacity"></i>
-      <i class="fa fa-linkedin w3-hover-opacity"></i>
-    </div>
-  </footer>
-
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
-    // Modal Image Gallery
-    function onClick(element) {
-      document.getElementById("img01").src = element.src;
-      document.getElementById("modal01").style.display = "block";
-      var captionText = document.getElementById("caption");
-      captionText.innerHTML = element.alt;
-    }
-    // Toggle between showing and hiding the sidebar when clicking the menu icon
-    var mySidebar = document.getElementById("mySidebar");
-    function w3_open() {
-      if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-      } else {
-        mySidebar.style.display = 'block';
-      }
-    }
-    // Close the sidebar with the close button
-    function w3_close() {
-      mySidebar.style.display = "none";
-    }
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
   </script>
-
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>
