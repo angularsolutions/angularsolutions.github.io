@@ -535,7 +535,7 @@
   
   .p1wrapper{
     position: relative;
-    top: 20%;
+    top: 40%;
     text-align:center;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -608,9 +608,7 @@
   
   .tile{
     width: 90%;
-    float: left;
-    background-color: #113835;
-    border: solid 3px #07d0a0;
+    
   }
   
   .pic{
@@ -825,6 +823,14 @@
     }
     html{
       font-size: 0.8em;
+    }
+    .p1wrapper{
+      position: relative;
+      top: 20%;
+      text-align:center;
+      display: grid;
+      grid-template-columns: none;
+      grid-gap: 5px;
     }
   }
   
