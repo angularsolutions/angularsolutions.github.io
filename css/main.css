@@ -579,32 +579,7 @@
     z-index: 30;
   }
   
-  .a {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-  }
-  .b {
-    grid-column: 1 / 2;
-    grid-row: 2 / 2;
-  }
-  .c {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-  }
-  .d {
-    grid-column: 2 / 3;
-    grid-row: 2 / 2;
-  }
-  .e {
-    grid-column: 3 / 3;
-    grid-row: 1 / 2;
-  }
-  .g {
-    grid-column: 4 / 4;
-    grid-row: 1 / 2;
-    background-color: #113835;
-    border: solid 3px #07d0a0;
-  }
+
   
   .tile{
     width: 90%;
@@ -631,7 +606,9 @@
     position: relative;
   
   }
-  
+  .contact{
+    width: 90% !important;
+  }
   /* -------------------- */
   /* ==========================================================================
      Helper classes
@@ -730,6 +707,33 @@
       overflow: hidden;
       margin: 0;
       z-index: -10;
+    }
+
+    .a {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+    .b {
+      grid-column: 1 / 2;
+      grid-row: 2 / 2;
+    }
+    .c {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+    .d {
+      grid-column: 2 / 3;
+      grid-row: 2 / 2;
+    }
+    .e {
+      grid-column: 3 / 3;
+      grid-row: 1 / 2;
+    }
+    .g {
+      grid-column: 4 / 4;
+      grid-row: 1 / 2;
+      background-color: #113835;
+      border: solid 3px #07d0a0;
     }
   }
   
@@ -832,6 +836,34 @@
       grid-template-columns: none;
       grid-gap: 5px;
     }
+
+     
+  .p3wrapper{
+    margin-left: none;
+    margin-right: auto;
+    position: relative;
+    width: 50%;
+    text-align: center;
+    font-family: Futura-Medium;
+    grid-gap: 0px;
+  }
+
+   
+  .pic{
+    display: block;
+    margin-left: none;
+    margin-right: auto;
+    object-fit: cover;
+    width: 40%;
+    border-radius: 120px;
+    border: 2px rgb(57, 134, 101) solid;
+  
+  }
+  .pic:hover{
+    height: 140px;
+    width: 60px;
+    border: 3px #87FFCB solid;
+    
   }
   
   @media print,
