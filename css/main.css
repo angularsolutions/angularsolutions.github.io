@@ -591,7 +591,7 @@
     margin-left: auto;
     margin-right: auto;
     object-fit: cover;
-    width: 70%;
+    width: 50%;
     border-radius: 120px;
     border: 3px rgb(57, 134, 101) solid;
     transition: all 0.5s ease;
@@ -718,7 +718,7 @@
       grid-row: 2 / 2;
     }
     .c {
-      grid-column: 2 / 3;
+      grid-column: 2/ 2;
       grid-row: 1 / 2;
     }
     .d {
@@ -839,10 +839,10 @@
 
      
   .p3wrapper{
-    margin-left: none;
+    margin-left: auto;
     margin-right: auto;
     position: relative;
-    width: 50%;
+    width: 100px;
     text-align: center;
     font-family: Futura-Medium;
     grid-gap: 0px;
@@ -854,14 +854,14 @@
     margin-left: none;
     margin-right: auto;
     object-fit: cover;
-    width: 40%;
-    border-radius: 120px;
+    width: 70%;
+    border-radius: 150px;
     border: 2px rgb(57, 134, 101) solid;
   
   }
   .pic:hover{
     height: 140px;
-    width: 60px;
+    width: 100px;
     border: 3px #87FFCB solid;
     
   }
